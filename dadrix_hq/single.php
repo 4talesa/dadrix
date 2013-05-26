@@ -1,24 +1,20 @@
 <?php
-
 /*
-
 Template Name: single
-
 */
-
 ?>
 
 <?php get_header(); ?>
 
 <div class="home fix">
 
-  <div class="main">
+  <div class="mainsingle">
 
     <div class="fix">
       
 
       <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
-  			<div class="post single fix">
+  			<div class="post single">
 				<h2 class="title" id="post-<?php the_ID(); ?>"><?php the_title() ?></h2>
 				<div class="entry">
 					<?php the_content('<p>Leia mais&raquo;</p>'); ?>
@@ -69,8 +65,7 @@ Template Name: single
   		<?php endif; ?>
   	<?php include (TEMPLATEPATH . '/inc/spo.php'); ?>
   	</div>
-  </div>
-           <?php include (TEMPLATEPATH . '/sidebar.php'); ?>
+  </div>           
 </div>
 </div>
 

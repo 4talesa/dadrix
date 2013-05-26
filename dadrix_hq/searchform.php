@@ -1,6 +1,5 @@
-<div id="search">
-<form method="get" id="searchForm" action="<?php bloginfo('home'); ?>/">
-	<input type="text" placeholder="busque aqui" name="s" id="s" />
-		<input id="searchsubmit" type="image" src="<?php bloginfo('template_directory'); ?>/res/searchboxsubmit.png" alt="Buscar" />
+<form method="get" id="searchform" action="<?php bloginfo('home'); ?>/google-cse/">
+<label for="q" class="assistive-text">Busca</label>
+<input type="text" class="field" name="q" id="q"/>
+<input type="submit" class="submit" id="searchsubmit"/>
 </form>
-</div>

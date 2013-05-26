@@ -2,26 +2,6 @@
 
 if ( function_exists('register_sidebar') ) {
 	register_sidebar(array(
-		'name' => 'blurb',
-		'before_widget' => '',
-		'after_widget' => '',
-		'before_title' => '<h3>',
-		'after_title' => '</h3>',
-	));
-}
-
-if ( function_exists('register_sidebar') ) {
-	register_sidebar(array(
-		'name' => 'bluetop',
-		'before_widget' => '',
-		'after_widget' => '',
-		'before_title' => '<h3>',
-		'after_title' => '</h3>',
-	));
-}
-
-if ( function_exists('register_sidebar') ) {
-	register_sidebar(array(
 		'name' => 'topright',
 		'before_widget' => '',
 		'after_widget' => '',

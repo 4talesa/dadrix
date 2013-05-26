@@ -6,9 +6,9 @@
  
     <div class="fix">	
 
-	<?php if (is_home()):
+	<?php if (is_home()):		
 		include (TEMPLATEPATH . '/index_slider.php');
-		include (TEMPLATEPATH . '/index_home.php');
+		include (TEMPLATEPATH . '/index_home.php');		
 	else:
 		if (have_posts()) : while (have_posts()) : the_post(); ?>
   			<div class="post" id="post-<?php the_ID(); ?>">

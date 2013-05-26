@@ -126,7 +126,7 @@
 	}
 </style>
 
-<?php wp_list_pages('sort_column=menu_order&depth=1&title_li='); ?>
+<?php wp_list_pages('sort_column=menu_order&sort_order=DESC&depth=1&title_li='); ?>
 </div>
 <!--/End Top navigation-->	
 	
@@ -159,30 +159,22 @@
 </div>
 <!--End Feeds and social-->
 
-<div id="mast">
+<div id="titulo">
 
 	<?php if ( get_option('social_logo') != ""){ ?>
-			<img width=300 height=200 src="<?php echo get_option('social_logo'); ?>" alt=""/>
-		<?php }
+			<a href="<?php echo get_settings('home'); ?>/" title="Home">
+			<img width=90 height=90 src="<?php echo get_option('social_logo'); ?>" alt=""/>
+			</a>
+		<?php }else{ ?>
+			<h1><a href="<?php echo get_settings('home'); ?>/" title="Home"><?php bloginfo('name'); ?></a></h1>
+			<h2><?php bloginfo('description'); ?></h2>
+			<?php }
 	?>
-							
-</div><!--End mast-->
 
-<div id="blurb">
-<?php if ( function_exists('dynamic_sidebar')) : dynamic_sidebar('blurb'); endif; ?>
+</div><!--End titulo-->
 
-</div><!--End blurb-->
-
-<div id="titulo">
-<h1><a href="<?php echo get_settings('home'); ?>/" title="Home"><?php bloginfo('name'); ?></a></h1>
-</div>
-
-<div id="descricao">
-<h2><?php bloginfo('description'); ?></h2>
-</div>
-
-<div class="bluetop">
-<?php include (TEMPLATEPATH . '/inc/bluetop.php'); ?> 
+<div id="topright">
+	<?php if ( function_exists('dynamic_sidebar')) : dynamic_sidebar('topright'); endif; ?>
 </div>
 
 </div><!--End Header-->

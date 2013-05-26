@@ -10,7 +10,7 @@ Author: Dadrix
 
 Author URI: http://dadrix.com.br
 
-Version: 1.0
+Version: 2.0
 */
 
 
@@ -22,6 +22,8 @@ a   { color:#ccc;text-decoration:none;outline:0;border:0; }
 a:hover { color:#70b0de; }
 
 a img { border: none; }
+
+img, a {border:none, outline: none;}
 
 
 
@@ -61,7 +63,7 @@ blockquote { color:#000; padding:5px; font: 14px tahoma,verdana,arial;  }
 
 
 
-#header { width:1000px;margin:0 auto;padding:0;background: url(res/bgheader.png) no-repeat 0 0;height:257px;}
+#header { width:1000px;margin:0 auto;padding:0;background: url(res/bgheader.png) no-repeat 0 0;height:160px;}
 
 #header h1 a { margin:0;padding:0;color:#6699FF;font:normal 32px;margin:0;padding:0;letter-spacing:-1px;}
 
@@ -71,7 +73,9 @@ blockquote { color:#000; padding:5px; font: 14px tahoma,verdana,arial;  }
 
 #header h2 span{color:#666;letter-spacing:-2px;}
 
-#mast{ float:left;margin:0;background:transparent;height:200px;display:inline;overflow:hidden; width: 300px;text-align: center}
+#titulo{ float:left;margin:0;background:transparent;height:100px;display:inline;overflow:hidden; width: 300px;text-align: center}
+
+#topright{ float:right;margin:0;background:transparent;height:100px;display:inline;overflow:hidden; width: 700px;text-align: center}
 
 #topsocial   { list-style:none;text-align:right;float:right;height: 55px; background: transparent; width: 300px}
 
@@ -84,21 +88,6 @@ blockquote { color:#000; padding:5px; font: 14px tahoma,verdana,arial;  }
 #topnav li a:hover { color: #66CCFF; }
 
 #topnav li span{color:#666;letter-spacing:-2px;}
-
-#blurb   {list-style:none; text-align:center;float:right;height: 95px; background: transparent; width: 700px;}
-
-#titulo   {list-style:none; text-align:center;float:right;height: 50px; background: transparent; width: 700px;}
-
-#descricao   {list-style:none; text-align:center;float:right;height: 50px; background: transparent; width: 700px;}
-
-/* ----------------------------------- blue tops */
-
-
-.bluetop{margin:0 auto;padding:0;width:1000px; background: transparent; float: left}
-
-.topleft{padding:0;margin:0;width:730;float:left;}
-
-.topright{padding:0;margin:0;width:220;float:right;}
 
 /* ----------------------------------- footer */
 
@@ -127,6 +116,8 @@ blockquote { color:#000; padding:5px; font: 14px tahoma,verdana,arial;  }
 .home{ background: transparent ;margin:0;padding:10px 0;}
 
 .main { width: 700px;margin:0;padding:0;float:left; background: transparent;}
+
+.mainsingle { width: 1000px;margin:0;padding:0;float:left; background: transparent;}
 
 .post-category { background: transparent; display: block; width: 680px; border: 2px solid #eee;overflow: hidden; height: 490px; margin: 5px 0 0 5px; position: relative; }
 
@@ -167,19 +158,19 @@ blockquote { color:#000; padding:5px; font: 14px tahoma,verdana,arial;  }
 
 .post-month { font:11px arial, sans serif;text-transform: uppercase;color:#70b0de; }
 
-.post.single { color:#333; width:680px;padding:3px 12px; }
+.post.single { color:#333; width:990px;padding:3px 5px; background: transparent;}
 
 .post.single h2, .post.single h2 a { font:bold 24px arial,helvetica;letter-spacing:-1px;display: inline;line-height:1.4em;color:#6690AF;text-decoration:none; }
 
 
 
-.post.single .entry { float:right;overflow:hidden;padding:5px 5px 25px 5px; }
+.post.single.entry { float:right;overflow:hidden;padding:5px 5px 5px 5px; }
 
-.post .entry img.wp-smiley  { border:0; margin:0; }  
+.post.entry img.wp-smiley  { border:0; margin:0; }  
 
-.post .entry img,.entry a img { border:4px solid #a9a393; }
+.post.entry img,.entry a img { border:0px; }
 
-.post .entry a:hover img { border-color:#fff; }
+.post.entry a:hover img { border-color:#fff; }
 
 
 
@@ -197,7 +188,7 @@ blockquote { color:#000; padding:5px; font: 14px tahoma,verdana,arial;  }
 
 
 
-.post.single blockquote { margin: 0 1.5em; color: #6c6c6c; }
+.post.single blockquote { margin: 0 1.5em; color: #6c6c6c;}
 
 .post.single ul, .post.single ol { margin: 1em 1.5em; }
 
@@ -425,10 +416,6 @@ h3#trackback{background:transparent;font:bold 14px arial,arial black,impact,taho
 
 
 #sidebar .widget{ clear: right; margin: 1em 0; padding-right: 10px;}
-
-
-
-#search{background:transparent url(res/searchbox.png) repeat-x;height:34px;width:274px;float:right;margin:1em 0;padding: 0; }
 
 #searchForm { margin-left: 7px; }
 

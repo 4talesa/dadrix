@@ -28,7 +28,4 @@ Template Name: page
 </div>
 </div>
 
-<div class="footer">
-
-<?php include (TEMPLATEPATH . '/inc/footer.php'); ?>
-</div>
+<?php include (TEMPLATEPATH . '/footer.php'); ?>

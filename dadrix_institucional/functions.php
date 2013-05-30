@@ -3,37 +3,7 @@
 
 if ( function_exists('register_sidebar') ) {
 	register_sidebar(array(
-		'name' => 'blurb',
-		'before_widget' => '',
-		'after_widget' => '',
-		'before_title' => '<h3>',
-		'after_title' => '</h3>',
-	));
-}
-
-if ( function_exists('register_sidebar') ) {
-	register_sidebar(array(
-		'name' => 'bluetop',
-		'before_widget' => '',
-		'after_widget' => '',
-		'before_title' => '<h3>',
-		'after_title' => '</h3>',
-	));
-}
-
-if ( function_exists('register_sidebar') ) {
-	register_sidebar(array(
 		'name' => 'topright',
-		'before_widget' => '',
-		'after_widget' => '',
-		'before_title' => '<h3>',
-		'after_title' => '</h3>',
-	));
-}
-
-if ( function_exists('register_sidebar') ) {
-	register_sidebar(array(
-		'name' => 'sidebar',
 		'before_widget' => '',
 		'after_widget' => '',
 		'before_title' => '<h3>',
@@ -578,10 +548,8 @@ function social_subpanel() {
 	   
 	   $option_bgcolor = $_POST['bgcolor'];	
 
-	   $option_bgfooter2 = $_POST['bgfooter2'];		   
+	   $option_bgfooter = $_POST['bgfooter'];		   
 	   
-	   $option_footer2_height = $_POST['footer2_height'];		   	   
-   
 	   $option_thumb_text = $_POST['thumb_text'];
 
        update_option('social_facebook', $option_facebook);
@@ -620,9 +588,7 @@ function social_subpanel() {
    
 	   update_option('social_bgbody', $option_bgbody);
 	   
-	   update_option('social_bgfooter2', $option_bgfooter2);	   
-	   
-	   update_option('social_footer2_height', $option_footer2_height);	   
+	   update_option('social_bgfooter', $option_bgfooter);	   
 	   
 	   update_option('social_bgrepeat', $option_bgrepeat);
 	   
@@ -680,8 +646,7 @@ function social_subpanel() {
 		  Logo: <input name="logo" type="text" id="logo" value="<?php echo get_option('social_logo'); ?>" size="200" /><br>
 		  Fundo topo: <input name="bgheader" type="text" id="bgheader" value="<?php echo get_option('social_bgheader'); ?>" size="200" /><br>
 		  	  
-		  Fundo rodape2: <input name="bgfooter2" type="text" id="bgfooter2" value="<?php echo get_option('social_bgfooter2'); ?>" size="200" /><br>		  		  
-		  Altura rodape2: <input name="footer2_height" type="text" id="footer2_height" value="<?php echo get_option('social_footer2_height'); ?>" size="4" /><br>		  		  
+		  Fundo rodape: <input name="bgfooter" type="text" id="bgfooter" value="<?php echo get_option('social_bgfooter'); ?>" size="200" /><br>		  		  
 		  Fundo corpo imagem: <input name="bgbody" type="text" id="bgbody" value="<?php echo get_option('social_bgbody'); ?>" size="200" /><br>
 		  Fundo corpo imagem repeat: <input name="bgrepeat" type="text" id="bgrepeat" value="<?php echo get_option('social_bgrepeat'); ?>" size="40" />
 		  <br>não repete: no-repeat

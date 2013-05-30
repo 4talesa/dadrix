@@ -6,7 +6,7 @@ if ( function_exists('register_sidebar') ) {
 		'name' => 'blurb',
 		'before_widget' => '',
 		'after_widget' => '',
-		'before_title' => '<h3>',
+		'before_title' => '<h3 class="widgettitle">',
 		'after_title' => '</h3>',
 	));
 }
@@ -16,7 +16,7 @@ if ( function_exists('register_sidebar') ) {
 		'name' => 'bluetop',
 		'before_widget' => '',
 		'after_widget' => '',
-		'before_title' => '<h3>',
+		'before_title' => '<h3 class="widgettitle">',
 		'after_title' => '</h3>',
 	));
 }
@@ -26,7 +26,7 @@ if ( function_exists('register_sidebar') ) {
 		'name' => 'topright',
 		'before_widget' => '',
 		'after_widget' => '',
-		'before_title' => '<h3>',
+		'before_title' => '<h3 class="widgettitle">',
 		'after_title' => '</h3>',
 	));
 }
@@ -36,7 +36,7 @@ if ( function_exists('register_sidebar') ) {
 		'name' => 'sidebar',
 		'before_widget' => '',
 		'after_widget' => '',
-		'before_title' => '<h3>',
+		'before_title' => '<h3 class="widgettitle">',
 		'after_title' => '</h3>',
 	));
 }
@@ -46,7 +46,7 @@ if ( function_exists('register_sidebar') ) {
 		'name' => 'fooleft',
 		'before_widget' => '',
 		'after_widget' => '',
-		'before_title' => '<h3>',
+		'before_title' => '<h3 class="widgettitle">',
 		'after_title' => '</h3>',
 	));
 }
@@ -56,7 +56,7 @@ if ( function_exists('register_sidebar') ) {
 		'name' => 'bannerhome',
 		'before_widget' => '',
 		'after_widget' => '',
-		'before_title' => '<h3>',
+		'before_title' => '<h3 class="widgettitle">',
 		'after_title' => '</h3>',
 	));
 }
@@ -66,7 +66,7 @@ if ( function_exists('register_sidebar') ) {
 		'name' => 'bannersidebar',
 		'before_widget' => '',
 		'after_widget' => '',
-		'before_title' => '<h3>',
+		'before_title' => '<h3 class="widgettitle">',
 		'after_title' => '</h3>',
 	));
 }
@@ -103,36 +103,11 @@ function widget_categories() {
 
   <div id="categories" class="widget">
 
-	<h3>Categorias</h3>
+   <ul class="fix">
 
-		<?php $args = array(
-			'show_option_all'    => '',
-			'orderby'            => 'name',
-			'order'              => 'ASC',
-			'style'              => 'none',
-			'show_count'         => 0,
-			'hide_empty'         => 1,
-			'use_desc_for_title' => 1,
-			'child_of'           => 0,
-			'feed'               => '',
-			'feed_type'          => '',
-			'feed_image'         => '',
-			'exclude'            => '',
-			'exclude_tree'       => '',
-			'include'            => '',
-			'hierarchical'       => 1,
-			'title_li'           => __( 'Categorias' ),
-			'show_option_none'   => __('Sem caterogorias'),
-			'number'             => null,
-			'echo'               => 1,
-			'depth'              => 0,
-			'current_category'   => 0,
-			'pad_counts'         => 0,
-			'taxonomy'           => 'category',
-			'walker'             => null
-		);
-		
-		wp_list_categories( $args ); ?>
+  		<?php wp_list_cats('sort_column=name&optioncount=0'); ?>
+
+  	</ul>
 
   </div>
 
@@ -486,11 +461,11 @@ function wp_pagenavi($before = '', $after = '', $prelabel = '', $nxtlabel = '', 
 
 		if($max_page > 1 || $always_show) {
 
-			echo "$before <div class='Nav'><span>($max_page): </span>";
+			echo "$before <div class='Nav'><span>Pages ($max_page): </span>";
 
 			if ($paged >= ($pages_to_show-1)) {
 
-				echo '<a href="'.get_pagenum_link().'">&laquo; Primeira</a> ... ';
+				echo '<a href="'.get_pagenum_link().'">&laquo; First</a> ... ';
 
 			}
 
@@ -518,7 +493,7 @@ function wp_pagenavi($before = '', $after = '', $prelabel = '', $nxtlabel = '', 
 
 			if (($paged+$half_pages_to_show) < ($max_page)) {
 
-				echo ' ... <a href="'.get_pagenum_link($max_page).'">Ultima &raquo;</a>';
+				echo ' ... <a href="'.get_pagenum_link($max_page).'">Last &raquo;</a>';
 
 			}
 
@@ -567,7 +542,9 @@ function social_subpanel() {
 	   $option_logo = $_POST['logo'];	   
 	   
 	   $option_bgheader = $_POST['bgheader'];	   
-  
+	   
+	   $option_bgfooter = $_POST['bgfooter'];	   
+	   
 	   $option_bgbody = $_POST['bgbody'];	
 
 	   $option_bgrepeat = $_POST['bgrepeat'];	   	   
@@ -578,12 +555,24 @@ function social_subpanel() {
 	   
 	   $option_bgcolor = $_POST['bgcolor'];	
 
+	   $option_bgbluetop = $_POST['bgbluetop'];		   
+	   
+	   $option_bluetop_height = $_POST['bluetop_height'];		   
+	   
 	   $option_bgfooter2 = $_POST['bgfooter2'];		   
 	   
 	   $option_footer2_height = $_POST['footer2_height'];		   	   
    
-	   $option_thumb_text = $_POST['thumb_text'];
-
+	   $option_mast_width = $_POST['mast_width'];	   
+	   
+	   $option_nav_width = $_POST['nav_width'];	   	   	   
+   
+   	   $option_thumb_text_width = $_POST['thumb_text_width'];	   
+	   
+	   $option_thumb_text_height = $_POST['thumb_text_height'];
+	   
+	   $option_thumb_text = $_POST['thumb_text'];	   
+	   
        update_option('social_facebook', $option_facebook);
 
        update_option('social_twitter', $option_twitter);
@@ -616,9 +605,15 @@ function social_subpanel() {
 	   
 	   update_option('social_logo', $option_logo);
 	   
-	   update_option('social_bgheader', $option_bgheader);	   
-   
+	   update_option('social_bgheader', $option_bgheader);
+	   
+	   update_option('social_bgfooter', $option_bgfooter);
+	   
 	   update_option('social_bgbody', $option_bgbody);
+	   
+	   update_option('social_bgbluetop', $option_bgbluetop);	   
+	   
+	   update_option('social_bluetop_height', $option_bluetop_height);	   
 	   
 	   update_option('social_bgfooter2', $option_bgfooter2);	   
 	   
@@ -632,8 +627,16 @@ function social_subpanel() {
 	   
 	   update_option('social_bgcolor', $option_bgcolor);
 	   
-	   update_option('social_thumb_text', $option_thumb_text);
-   	   
+	   update_option('social_mast_width', $option_mast_width);
+	   
+	   update_option('social_nav_width', $option_nav_width);
+	   
+	   update_option('social_thumb_text_width', $option_thumb_text_width);
+	   
+	   update_option('social_thumb_text_height', $option_thumb_text_height);	   
+	   
+	   update_option('social_thumb_text', $option_thumb_text);	   
+	   	   
        ?> <div class="updated"><p>social settings saved</p></div>
 	<?php }
 
@@ -679,7 +682,12 @@ function social_subpanel() {
 		  
 		  Logo: <input name="logo" type="text" id="logo" value="<?php echo get_option('social_logo'); ?>" size="200" /><br>
 		  Fundo topo: <input name="bgheader" type="text" id="bgheader" value="<?php echo get_option('social_bgheader'); ?>" size="200" /><br>
+		  Fundo bluetop: <input name="bgbluetop" type="text" id="bgbluetop" value="<?php echo get_option('social_bgbluetop'); ?>" size="200" /><br>		  		  
+		  Altura bluetop: <input name="bluetop_height" type="text" id="bluetop_height" value="<?php echo get_option('social_bluetop_height'); ?>" size="4" /><br>		  		  		  
 		  	  
+		  Largura da area de nome e slogan: <input name="mast_width" type="text" id="mast_width" value="<?php echo get_option('social_mast_width'); ?>" size="4" /><br>		  
+		  Largura da area de rede social e navegacao: <input name="nav_width" type="text" id="nav_width" value="<?php echo get_option('social_nav_width'); ?>" size="4" /><br>		  
+		  Fundo rodape: <input name="bgfooter" type="text" id="bgfooter" value="<?php echo get_option('social_bgfooter'); ?>" size="200" /><br>
 		  Fundo rodape2: <input name="bgfooter2" type="text" id="bgfooter2" value="<?php echo get_option('social_bgfooter2'); ?>" size="200" /><br>		  		  
 		  Altura rodape2: <input name="footer2_height" type="text" id="footer2_height" value="<?php echo get_option('social_footer2_height'); ?>" size="4" /><br>		  		  
 		  Fundo corpo imagem: <input name="bgbody" type="text" id="bgbody" value="<?php echo get_option('social_bgbody'); ?>" size="200" /><br>
@@ -707,6 +715,8 @@ function social_subpanel() {
 		  <br>imagem "rola" com a tela: scroll</p>
 
 		  Fundo corpo cor (RGB): #<input name="bgcolor" type="text" id="bgcolor" value="<?php echo get_option('social_bgcolor'); ?>" size="20" /><br>
+		  Largura da miniatura de post: <input name="thumb_text_width" type="text" id="thumb_text_width" value="<?php echo get_option('social_thumb_text_width'); ?>" size="4" /><br>		  
+		  Altura  da miniatura de post: <input name="thumb_text_height" type="text" id="thumb_text_height" value="<?php echo get_option('social_thumb_text_height'); ?>" size="4" /><br>		  
 		  Exibe texto na miniatura de post: (s/n) <input name="thumb_text" type="text" id="thumb_text" value="<?php echo get_option('social_thumb_text'); ?>" size="1" /><br>		  
 		  
 		  </td>
@@ -1061,7 +1071,7 @@ function cattag_tagcloud(
 
 function cattag_related_posts(
 
-	$order = 'DATE_DESC',
+	$order = 'RANDOM',
 
 	$limit = 5,
 
